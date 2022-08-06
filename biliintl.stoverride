@@ -1,0 +1,21 @@
+name: bilibili intl
+desc: bilibili东南亚登录
+http:
+  mitm:
+    - "app.biliintl.com"
+    - "passport.biliintl.com"
+  url-rewrite:
+    - (^https?:\/\/app\.biliintl\.com\/(x\/)?(intl|dm|v1\/fav|reply|history|share|v\d/msgfeed).+)(&locale=zh_[A-Z]{2})(.+)(&s_locale=zh-Hans_[A-Z]{2})(.+)(&sim_code=\d+)(.+) $1&locale=zh-Hans_SG$5&s_locale=zh-Hans_SG$7&sim_code=52507$9 302
+    - (^https?:\/\/app\.biliintl\.com\/(x\/)?(intl|dm|wallet|reply|history|v\d/msgfeed).+)(&s_locale=zh-Hans_[A-Z]{2})(.+)(&sim_code=\d+)(.+) $1&s_locale=zh-Hans_SG$5&sim_code=52507$7 302
+    - (^https?:\/\/passport\.biliintl\.com\/x\/intl\/passport-login\/.+)(&locale=zh_[A-Z]{2})(.+)(&s_locale=zh-Hans_[A-Z]{2})(.+)(&sim_code=\d+)(.+) $1&locale=zh-Hans_SG$3&s_locale=zh-Hans_SG$5&sim_code=52507$7 302
+  script:
+    - match: ^https?:\/\/app\.biliintl\.com\/(intl\/gateway\/v\d\/app\/data\/report\/heartbeat\/mobile|x\/(history|reply)/v\d/add|x\/v\d\/fav\/(add|del)|x\/wallet\/)
+      name: biliintl
+      type: request
+      require-body: true
+      timeout: 10
+
+script-providers:
+  biliintl:
+    url: https://raw.githubusercontent.com/AisukaYuki/Shadowrocket-rules/main/Bstar.js
+    interval: 86400
