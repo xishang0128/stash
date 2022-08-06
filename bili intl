@@ -1,0 +1,5 @@
+name: bilibili intl
+desc: bilibili东南亚登录
+http:
+  mitm:
+    
