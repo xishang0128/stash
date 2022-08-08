@@ -12,22 +12,22 @@ http:
   script:
     - match: ^https?:\/\/app\.biliintl\.com\/(intl\/gateway\/v\d\/app\/data\/report\/heartbeat\/mobile|x\/(history|reply)/v\d/add|x\/v\d\/fav\/(add|del)|x\/wallet\/)
       name: biliintl1
-      type: response
+      type: request
       require-body: true
       timeout: 10
     - match: https://app.biliintl.com/intl/gateway/v2/app/(relation\/modify|view\/like)
       name: biliintl1
-      type: response
+      type: request
       require-body: true
       timeout: 10
     - match: https://app.biliintl.com/x/intl/member/app/sign/update.*
       name: biliintl1
-      type: response
+      type: request
       require-body: true
       timeout: 10
     - match: ^https?:\/\/passport\.biliintl\.com\/x\/intl\/passport-login\/
       name: biliintl1
-      type: response
+      type: request
       require-body: true
       timeout: 10
 
