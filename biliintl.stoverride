@@ -33,5 +33,5 @@ http:
 
 script-providers:
   biliintl1:
-    url: https://raw.githubusercontent.com/AisukaYuki/Shadowrocket-rules/main/Bstar.js
+    url: https://github.com/xishang0128/stash/raw/main/bstar.js
     interval: 86400
