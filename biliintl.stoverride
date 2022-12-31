@@ -14,22 +14,22 @@ http:
       name: intl
       type: request
       require-body: true
-      timeout: 10
+      timeout: 120
     - match: https://app.biliintl.com/intl/gateway/v2/app/(relation\/modify|view\/like)
       name: intl
       type: request
       require-body: true
-      timeout: 10
+      timeout: 120
     - match: https://app.biliintl.com/x/intl/member/app/sign/update.*
       name: intl
       type: request
       require-body: true
-      timeout: 10
+      timeout: 120
     - match: ^https?:\/\/passport\.biliintl\.com\/x\/intl\/passport-login\/
       name: intl
       type: request
       require-body: true
-      timeout: 10
+      timeout: 120
 
 script-providers:
   intl:
