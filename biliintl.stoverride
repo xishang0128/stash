@@ -33,5 +33,5 @@ http:
 
 script-providers:
   intl:
-    url: https://github.com/xishang0128/stash/raw/main/bstar.js
+    url: https://raw.githubusercontent.com/xishang0128/stash/main/bstar.js
     interval: 86400
